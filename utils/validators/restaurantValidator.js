@@ -18,7 +18,7 @@ exports.creatRestaurantValidator = [
   check("category")
     .notEmpty()
     .withMessage("Restaurant must be belong to a category")
-    .isMongoId()
+    .isLength()
     .withMessage("Invalid ID formate"),
 
   check("city")
