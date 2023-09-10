@@ -15,11 +15,7 @@ exports.creatRestaurantValidator = [
       return true;
     }),
 
-  check("category")
-    .notEmpty()
-    .withMessage("Restaurant must be belong to a category")
-    .isMongoId()
-    .withMessage("Invalid ID formate"),
+ 
 
   check("city")
     .notEmpty()
