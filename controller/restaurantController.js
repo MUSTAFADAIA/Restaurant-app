@@ -1,6 +1,6 @@
 const restaurantsModels = require("../models/restaurantsModels");
 const factory = require("./handlerFactory");
-const { uploadSingleImage } = require("../middleware/uploadImageMiddleware");
+const { uploadSingleImage } = require("../Middleware/uploadImageMiddleware");
 const asyncHandler = require("express-async-handler");
 const { v4: uuidv4 } = require("uuid");
 
