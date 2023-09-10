@@ -1,4 +1,4 @@
-const ApiError = require("../middleware/errorMiddleware");
+const ApiError = require("../Middleware/errorMiddleware");
 const ApiFeatures = require("../utils/apiFeatures");
 const asyncHandler = require("express-async-handler");
 
