@@ -5,8 +5,6 @@ const mongoose = require("mongoose");
 const path = require("path");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
-const cors = require("cors");
-const compression = require("compression");
 const globalError = require("./middleware/errorMiddleware");
 dotenv.config({ path: "config.env" });
 const categoryRoute = require("./routes/categoryRoute");
@@ -14,10 +12,8 @@ const restaurantRoute = require("./routes/restaurantRoute");
 const userRoute = require("./routes/userRoute");
 const reservationRoute = require("./routes/reservationRoute");
 const authRoute = require("./routes/authRoute ");
-
-
-
-
+const cors = require("cors");
+const compression = require("compression");
 
 // Connect with db
 mongoose
@@ -35,7 +31,6 @@ const app = express();
 app.use(cors());
 app.options("*", cors());
 
-//Compress all req and res for me
 app.use(compression());
 
 //Middlewares
@@ -59,10 +54,6 @@ app.use("/api/v1/users", userRoute);
 app.use("/api/v1/reservations", reservationRoute);
 app.use("/api/v1/auth", authRoute);
 
-
-
-
-
 app.use(globalError);
 
 const port = process.env.PORT || 9000;
@@ -73,7 +64,7 @@ app.listen(port, () => {
 // Handle rejection outside exprees
 process.on("unhandledRejection", (err) => {
   console.error(`unhandledRejection Errors: ${err.name}|${err.message}`);
-  
+
   server.close(() => {
     console.error(`Shutting down...`);
     process.exit(1);
