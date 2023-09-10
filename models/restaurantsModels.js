@@ -10,7 +10,7 @@ const restaurantSchema = mongoose.Schema(
       minlength: [3, "Name should have at least {min} character"],
     },
     category: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.name,
       ref: "category",
     },
     city: {
