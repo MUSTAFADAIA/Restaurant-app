@@ -38,6 +38,12 @@ restaurantSchema.post("init", (doc) => {
 restaurantSchema.post("save", (doc) => {
   setImageURL(doc);
 });
-
+restaurantSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "category",
+    delect: "name-_id",
+  });
+  next();
+});
 
 module.exports = mongoose.model("restaurant", restaurantSchema);
