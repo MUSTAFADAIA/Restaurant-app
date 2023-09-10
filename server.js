@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
-const globalError = require("./middleware/errorMiddleware");
+const globalError = require("./Middleware/errorMiddleware");
 dotenv.config({ path: "config.env" });
 const categoryRoute = require("./routes/categoryRoute");
 const restaurantRoute = require("./routes/restaurantRoute");
