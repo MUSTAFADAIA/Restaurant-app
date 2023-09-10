@@ -9,10 +9,7 @@ const restaurantSchema = mongoose.Schema(
       maxlength: [30, "name cant exceed more than {max} characters"],
       minlength: [3, "Name should have at least {min} character"],
     },
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "category",
-    },
+   
     city: {
       type: String,
       required: [true, "please enter category"],
@@ -38,12 +35,6 @@ restaurantSchema.post("init", (doc) => {
 restaurantSchema.post("save", (doc) => {
   setImageURL(doc);
 });
-restaurantSchema.pre(/^find/, function (next) {
-  this.populate({
-    path: "category",
-    delect: "name-_id",
-  });
-  next();
-});
+
 
 module.exports = mongoose.model("restaurant", restaurantSchema);
