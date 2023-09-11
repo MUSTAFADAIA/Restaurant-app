@@ -3,11 +3,11 @@ const validatorMiddleware = require("../../Middleware/validatorMiddleware");
 const { default: slugify } = require("slugify");
 
 exports.creatreservationsValidator = [
-  check("user")
-    .notEmpty()
-    .withMessage("Reservations must be belong to a user")
-    .isMongoId()
-    .withMessage("Invalid ID formate"),
+ // check("user")
+  //  .notEmpty()
+  //  .withMessage("Reservations must be belong to a user")
+   // .isMongoId()
+   // .withMessage("Invalid ID formate"),
 
   check("restaurant")
     .notEmpty()
