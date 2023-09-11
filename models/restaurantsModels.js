@@ -9,6 +9,10 @@ const restaurantSchema = mongoose.Schema(
       maxlength: [30, "name cant exceed more than {max} characters"],
       minlength: [3, "Name should have at least {min} character"],
     },
+     category: {
+      type:[Array],
+      ref: "category",
+    },
    
     city: {
       type: String,
