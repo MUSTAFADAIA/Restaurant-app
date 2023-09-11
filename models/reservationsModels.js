@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const reservationSchema = mongoose.Schema(
   {
     user: {
-      type: mongoose.Schema.Types.ObjectId,
+      type:[Array],
+        //mongoose.Schema.Types.ObjectId,
       ref: "user",
     },
     restaurant: {
