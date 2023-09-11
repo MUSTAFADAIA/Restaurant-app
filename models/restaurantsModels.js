@@ -25,7 +25,7 @@ const restaurantSchema = mongoose.Schema(
 
 const setImageURL = (doc) => {
   if (doc.image) {
-    const imageUrl = `${process.env.BASE_URL}/restaurants/${doc.image}`;
+    const imageUrl = `${process.env.BASE_URL}/restaurant/${doc.image}`;
     doc.image = imageUrl;
   }
 };
