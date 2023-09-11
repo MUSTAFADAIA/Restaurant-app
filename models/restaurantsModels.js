@@ -18,7 +18,7 @@ const restaurantSchema = mongoose.Schema(
       type: String,
       required: [true, "please enter category"],
     },
-    image: String,
+    image: [String],
   },
   { timestamps: true }
 );
