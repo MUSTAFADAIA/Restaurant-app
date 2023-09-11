@@ -9,7 +9,7 @@ const reservationSchema = mongoose.Schema(
     },
     restaurant: {
       type: [Array],
-        mongoose.Schema.Types.ObjectId,
+       // mongoose.Schema.Types.ObjectId,
       ref: "restaurant",
     },
     date: Date,
