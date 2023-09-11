@@ -9,11 +9,11 @@ exports.creatreservationsValidator = [
    // .isMongoId()
    // .withMessage("Invalid ID formate"),
 
-  check("restaurant")
-    .notEmpty()
-    .withMessage("Reservations must be belong to a restaurant")
-    .isMongoId()
-    .withMessage("Invalid ID formate"),
+  //check("restaurant")
+  //  .notEmpty()
+  //  .withMessage("Reservations must be belong to a restaurant")
+  //  .isMongoId()
+  //  .withMessage("Invalid ID formate"),
 
   check("notes").custom((val, { req }) => {
     req.body.slug = slugify(val);
