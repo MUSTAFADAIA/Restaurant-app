@@ -41,6 +41,7 @@ exports.updatereservationsValidator = [
 ];
 
 exports.delereservationsValidator = [
-  check("id").isMongoId().withMessage("invalid reservations id"),
+  check("id"),
+ //.isMongoId().withMessage("invalid reservations id"),
   validatorMiddleware,
 ];
